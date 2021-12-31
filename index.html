@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Logo Designing, Illustration, UI/UX">
+  <meta name="author" content="Pushpendra Kumar">
+  <title>LocalGraphix</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="css/tooplate-style.css">
+  <link rel="stylesheet" href="css/mainstyle.css">
+</head>
+
+<body class = 'bodytag'>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  <!-- MAIN MENU -->
+  <div class="header" >
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navigation">
+      <div class="container-sm">
+      <a class="navbar-brand" href="index.html"><img src="images/logo.svg" height="38"/> Local<span style="color: #1a73e8;">Graphix</span></a>
+
+      <button id='nav-button' class="navbar-toggler" type="button" onclick="openNav()"  data-bs-target="#mySidepanel" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mx-auto gap-4">
+          <li class="nav-item ">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#service">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact Us</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto gap-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Subscribe Us</a>
+            <!-- <a class="nav-link" href="#messageUsModal" data-bs-toggle="modal" data-bs-target="#messageUsModal">
+               <img src="images/message.svg" height="28"></a> -->
+          </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+  </div>
+  
+
+<!-- COLLAPSED MENU-->
+  <div id="mySidepanel" class="sidepanel" style="top:60px !important">
+    <a class="nav-link nav-link-color" onclick="closeSideNav()" href="#">Home</a>
+    <hr style="margin-left: 10px;margin-right: 10px;">
+    <a class="nav-link nav-link-color" onclick="closeSideNav()" href="#service">Services</a>
+    <hr style="margin-left: 10px;margin-right: 10px;">
+    <a class="nav-link nav-link-color" onclick="closeSideNav()" href="#portfolio">Portfolio</a>
+    <hr style="margin-left: 10px;margin-right: 10px;">
+    <a class="nav-link nav-link-color" onclick="closeSideNav()" href="#contact">Contact Us</a>
+    <!-- <hr style="margin-left: 10px;margin-right: 10px;">
+    <a class="nav-link nav-link-color" href="#messageUsModal" data-bs-toggle="modal" data-bs-target="#messageUsModal" onclick="closeSideNav()">
+      <img src="images/message.svg" height="28"></a> -->
+  </div>
+
+
+  <!-- MESSAGE PANEL -->
+  <div id="messageSidepanel" class="messagepanel">
+    <section class="message-header">
+      <p style="padding-top:15px; display: flex;justify-content: center;color:white">Let's Message Us</p>
+    </section>
+    
+    <div class="message-body">
+      <label for="email" class="small-text-2">Email or Phone <span style="color: red;font-size:20px">*</span></label>
+      <br>
+      <small style="font-size: 10px;">We will revert back to you at this email or WhatsApp number.</small>
+      <input id="email" class="form-control mb-2" type="text" placeholder="" required>
+      <label for="email" class="small-text-2">Message <span style="color: red;font-size:20px">*</span></label>
+      <textarea class="form-control" style="height:90px; font-size:15px" required></textarea>
+    </div>
+    <div class="message-fotter d-flex justify-content-end gap-3">
+      <a class="btn small-text-btn" onclick="closeMessagePanel()">Close</a>
+      <a href="#contact" class="btn small-text-color">Send</a>
+    </div>
+  </div>
+  <a id='message_button' class="message-bot-button" style="margin-top: 100px;" onclick="openMessagePanel()" type="button" 
+  data-bs-target="#messageSidepanel"><img src="images/message.svg" height="24"></a>
+  
+
+  <!-- MESSAGE MODEL -->
+  <div class="container">
+    <div class="row">
+      <div id="messageUsModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header modal-head-foot">
+              <h5 class="modal-title"><img src="https://img.icons8.com/external-kmg-design-flat-kmg-design/24/000000/external-graphic-design-design-thinking-kmg-design-flat-kmg-design.png"/>Message Us</h5>
+            </div>
+            <div class="modal-body m-2">
+              <textarea placeholder="Type your message here..." class="form-control textarea-height modal-background"></textarea>
+            </div>
+            <div class="modal-footer modal-head-foot">
+              <button type="button" class="small-text-btn" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="small-text-color" style="margin-right: 15px;">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOCIAL MEDIA MODEL -->
+  <div id="mySocialpanel" class="socialpanel" style="top:80px !important;background-color:rgb(236, 236, 236)">
+    <div style="overflow: scroll; ">
+    <button type="button" onclick="closeSocialPanel()" class="btn-close center" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" aria-label="Close"></button>
+    <hr style="margin-left: 10px;margin-right: 10px;">
+    <a class="nav-link nav-link-color" onclick="closeSocialPanel()" href="https://www.instagram.com/localgraphix/" target="_blank"><img src="https://img.icons8.com/small/24/E1306C/instagram-new.png"/></a>
+    <hr style="margin-left: 10px;margin-right: 10px;">
+    <a class="nav-link nav-link-color" onclick="closeSocialPanel()" href="#services" target="_blank"><img src="https://img.icons8.com/material/24/FF0000/youtube-play--v1.png"/></a>
+    <hr style="margin-left: 10px;margin-right: 10px;">
+    <a class="nav-link nav-link-color" onclick="closeSocialPanel()" href="#" target="_blank"><img src="https://img.icons8.com/small/24/1DA1F2/twitter.png"/></a>
+    <hr style="margin-left: 10px;margin-right: 10px;">
+    <a class="nav-link nav-link-color" onclick="closeSocialPanel()" href="https://www.facebook.com/localgraphix1" target="_blank"><img src="https://img.icons8.com/material/24/4267B2/facebook--v1.png"/></a>
+  </div>
+  </div>
+  <a class="sidesocialbutton" onclick="openSocialPanel()"><img src="https://img.icons8.com/ios-filled/24/ffffff/forward--v1.png"/></a>
+
+
+  <!-- GET QOUTE MODEL -->
+  <div class="container">
+    <div class="row">
+      <div id="messageUsModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><img src="https://img.icons8.com/external-kmg-design-flat-kmg-design/24/000000/external-graphic-design-design-thinking-kmg-design-flat-kmg-design.png"/>Message Us</h5>
+            </div>
+            <div class="modal-body">
+              <textarea class="form-control"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Send</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ABOUT -->
+  <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
+          <div class="about-text">
+            <small class="small-text">Welcome to <span class="mobile-block">LocalGraphix!</span></small>
+            <h1 class="animated animated-text">
+              <span class="mr-2">Hey folks, We design</span>
+              <div class="animated-info">
+                <span class="animated-item">Logo</span>
+                <span class="animated-item">UI/UX</span>
+                <span class="animated-item">Illustrations</span>
+              </div>
+            </h1>
+
+            <p class="front-text">Building a beautiful design is a challenge. We are highly energetic to serve you in Logo Designing, Illustrations
+              and UI/UX designing</p>
+
+            <div class="custom-btn-group mt-4">
+              <a href="#" class="btn mr-lg-2 custom-btn"><img src="https://img.icons8.com/color/18/000000/bell.png"/> Subscribe Us</a>
+              <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Get a free quote</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-12 col-12">
+          <div class="about-image svg">
+            <img src="images/FirstImage.svg" class="img-fluid zoom-in" alt="Front image">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="project py-5" id="service">
+    <div class="container">
+
+      <div class="row">
+        <div class="text-center mx-auto col-12">
+
+          <div class="col-lg-8 mx-auto pb-3">
+            <p id='services' class="gray-color">OUR SERVICES</p>
+            <h2>We're ready to Serve you with best</h2>
+            <p>We provide designing services to startups & small business in their desigs and graphics </p>
+          </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4 py-3 py-sm-0">
+              <div class="card">
+                <img class="card-img-top service-images" src="images/logo1.svg" height="200" style="padding:20px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Logo Design</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 py-3 py-sm-0">
+              <div class="card">
+                <img class="card-img-top service-images" src="images/prod1.svg" height="200" style="padding:20px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Product Design</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 py-3 py-sm-0">
+              <div class="card">
+                <img class="card-img-top service-images" src="images/web1.svg" height="200" style="padding:20px;" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Web Design</h5>
+                  
+                </div>
+              </div>
+            </div>
+            <a class="small-text-fotter" style="text-align: end;padding:20px;color:#1a73e8;">Click here to see more 👉</a>
+          </div>
+        </div>
+
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <!-- PORTFOLIO -->
+  <section class="project py-5" id="portfolio">
+    <div class="container">
+
+      <div class="row">
+        <div class="text-center mx-auto col-12">
+
+          <div class="col-lg-8 mx-auto pb-3">
+            <p id='portfolio' class="gray-color">OUR PORTFOLIO</p>
+            <h2>Check our portfolio</h2>
+            <p>Check before work</p>
+          </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4 py-3 py-sm-0">
+              <div class="card" style="border-radius: 10px;">
+                
+                <div class="card-body" style="border-radius: 10px; background-color:#0057ff;color:white">
+                  <h5 class="card-title">Behance</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 py-3 py-sm-0">
+              <div class="card card-round-portfolio">
+                
+                <div class="card-body" style="border-radius: 10px;background-color:#ea4c89;color:white">
+
+                  <h5 class="card-title">Dribble</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 py-3 py-sm-0">
+              <div class="card card-round-portfolio">
+                
+                <div class="card-body portfolio-design" style="border-radius: 10px;background-color:#ffae00;color:white">
+                  <h5 class="card-title">Instagram</h5>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+          </div>
+        </div>
+      </div>
+  </section>
+
+  
+
+  <!-- CONTACT -->
+  <section class="py-5" id="contact">
+    <div class="container">
+      
+      <div class="row center">
+        
+            <p id='portfolio' class="gray-color text-center">CONTACT US</p>
+            <h2 class="mb-4 text-center">Interested to work together? Let's talk</h2>
+            <div class="d-flex justify-content-center">
+            <form action="" method="get">
+              <div class="card " style="border-radius: 15px;">
+                <div class="card-body contact-forms">
+              <div class="row">
+                <div class="col-lg-6 col-12">
+                  <label for="email" class="small-text-2">Name</label>
+                 <input style="background-color: white;" id="email" class="form-control mb-2" type="text" placeholder="Name Here...">
+                </div>
+
+                <div class="col-lg-6 col-12">
+                  <label for="email" class="small-text-2">Email or Phone <span style="color:red">*</span></label>
+                 <input id="email" class="form-control mb-2" type="text" placeholder="Email Here..." required>
+                </div>
+
+                <div class="col-12">
+                  <label for="email" class="small-text-2">Message <span style="color: red;">*</span></label>
+                  <textarea placeholder="Message Here..." class="form-control" style="height:120px; font-size:15px" required></textarea>
+                </div>
+
+                <div>
+                  <input type="submit" class="form-control submit-btn" value="Send">
+                </div>
+              </div>
+              </div>
+            </div>
+            </form>
+          
+          </div>
+        </div>
+
+  
+  </div>
+  </section>
+
+  <!-- FOOTER -->
+  <!-- Footer -->
+<footer class="page-footer font-small unique-color-dark" style="padding-top: 20px;background-color: #1a73e8;background-image: linear-gradient(120deg, #1a73e8 , #185abc); border-radius: 70px 0px 0px 0px;">
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 style="color: white;">About Us</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;color:white">
+        
+        <p class="small-text-fotter">Here at LocalGraphix, we can design everything you want. Whether you're looking for a new logo or some stunning flyers, Branding, or posts. Find the right design service for you and get the design you'll love today!</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 style="color: white;">Links</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 30px; color:white">
+        <p>
+          <a class="small-text-fotter" href="#">Home</a>
+        </p>
+        <p>
+          <a class="small-text-fotter" href="#service">Services</a>
+        </p>
+        <p>
+          <a class="small-text-fotter" href="#portfolio">Portfolio</a>
+        </p>
+        <p>
+          <a class="small-text-fotter" href="#contact">Contact Us</a>
+        </p>
+
+      </div>
+    
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 style="color: white;">Contact Info</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;color:white">
+        <p style="margin-bottom: 0px;" class="small-text-fotter">Noida, INDIA</p>
+        <p style="margin-bottom: 0px;" class="small-text-fotter">localgraphix.com@gmail.com</p>
+        <p style="margin-bottom: 0px;" class="small-text-fotter">08888888888</p>
+
+      </div>
+    </div>
+  </div>
+  <div style="background-color: #185abc;background-image: linear-gradient(120deg, #1a73e8 , #185abc); color:white; font-size:13px" class="copyright-text text-center py-2">Copyright © 2022 |
+    <a style="color:white" href="https://localgraphix.com/"> LocalGraphix</a> | All rights reserved
+  </div>
+</footer>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jQuery.headroom.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/smoothscroll.js"></script>
+  <script src="js/custom.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,352 @@
+.navigation{
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 1px 5px 1px rgb(230, 230, 230);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 65px;
+    background-color: rgb(255, 255, 255) !important;
+    
+}
+.bodytag{
+    background-color: rgb(248, 251, 253);
+}
+
+
+
+.card{
+    box-shadow: 0 1px 10px 1px rgb(230, 230, 230);
+    border: none;
+}
+.blur   {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+}
+#overlay    {
+    position: fixed;
+    display: none;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(255,255,255,.8);
+    z-index: 999;
+}
+
+.modal-background{
+    background-color: rgba(230, 230, 230, 0.5);
+  
+}
+
+.modal-head-foot{
+    background-color: rgba(230, 230, 230, 0.5);
+  
+}
+
+.navbar .navbar-collapse {
+text-align: center;
+}
+
+.textarea-height {
+    height: 100px;
+}
+
+.gray-color{
+    color: #acacac;
+}
+.maincolor{
+    color: #1a73e8
+}
+a .brand-logo {
+    color: #1a73e8 !important;
+}
+.portfolio-design{
+    background-color:rgb(245, 245, 245)
+}
+
+
+.animated {
+    position: relative;
+}
+
+.card-round-portfolio {
+    box-shadow: 0 1px 10px 1px rgb(230, 230, 230);
+    border-radius: 10px;
+    border: none;
+}
+
+.contact-forms{
+    width: 700px;
+    padding: 30px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 15px;
+    
+}
+.new-custom-botton{
+    background: rgb(255, 255, 255);
+    color: #4a4a4a;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 5px 0px;
+    font-size: 17px;
+    line-height: normal;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+.new-custom-botton:hover{
+    background: #185abc;
+    color: #ffffff !important;
+}
+
+
+.sidepanel  {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 300px;
+    top: 10 !important;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    overflow-y: hidden;
+    transition: 0.5s;
+    padding-top: 20px;
+    box-shadow: 0 1px 5px 1px rgb(230, 230, 230); 
+  }
+
+  .socialpanel  {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 365px;
+    top: 10 !important;
+    left: -3px;
+    background-color: rgb(255, 255, 255);
+    overflow-y: hidden;
+    transition: 0.5s;
+    padding-top: 20px;
+    box-shadow: 0 1px 5px 1px rgb(230, 230, 230); 
+    border-radius: 0px 20px 20px 0px;
+  }
+
+
+  .messagepanel  {
+    width: 320px;
+    position: fixed;
+    z-index: 2;
+    height: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(250, 250, 250);
+    overflow-y: hidden;
+    transition: 0.6s;
+    box-shadow: 0 1px 5px 1px rgb(230, 230, 230);
+    border-radius: 20px 20px 0px 0px;
+  }
+
+  .message-header{
+    background-color: #1a73e8;
+    border-radius: 20px 20px 0px 0px;
+    height: 60px;
+    position: relative;
+    top: 0px;
+  }
+
+  .message-body{
+     padding: 15px;
+  }
+
+  .message-fotter{
+    padding-right: 15px;
+    padding-bottom: 5px;
+ }
+
+.message-bot-button{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+    background-color: #1a73e8;
+    border-radius: 50px !important;
+    padding: 15px 15px 15px 15px;
+    box-shadow: 0 1px 5px 1px rgb(230, 230, 230);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+.sidesocialbutton
+{
+    background-color: #1a73e8;
+    
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 50px;
+    position: fixed;
+    left: -15px;
+    top:110px;
+
+}
+
+.contact-deco{
+    background-color: wheat;
+    
+}
+
+
+  .image_glow{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.image_glow:hover{
+    -webkit-box-shadow: 0px 0px 80px 0px rgba(255,165,0,1);
+    -moz-box-shadow: 0px 0px 80px 0px rgba(255,165,0,1);
+    box-shadow: 0px 0px 80px 0px rgba(255,165,0,1);
+}
+
+.zoom-in{
+   animation: frontImageZoom 0.7s;
+  }
+
+@keyframes frontImageZoom{
+    from {
+        -ms-transform: scale(0.4); 
+        -webkit-transform: scale(0.4); 
+        transform: scale(0.4); 
+    }
+    to{
+        -ms-transform: scale(1); 
+        -webkit-transform: scale(1); 
+        transform: scale(1); 
+    }
+}
+
+.service-images:hover{
+    animation: servicesZoom 0.7s;
+}
+
+@keyframes servicesZoom{
+    from {
+        -ms-transform: scale(1); 
+        -webkit-transform: scale(1); 
+        transform: scale(1); 
+    }
+    to{
+        -ms-transform: scale(1.15); 
+        -webkit-transform: scale(1.15); 
+        transform: scale(1.15); 
+    }
+}
+
+  
+.carousel {
+    margin-bottom: 0;
+	padding: 0 40px 30px 40px;
+}
+/* Reposition the controls slightly */
+.carousel-control {
+	left: -12px;
+}
+.carousel-control.right {
+	right: -12px;
+}
+/* Changes the position of the indicators */
+.carousel-indicators {
+	right: 50%;
+	top: auto;
+	bottom: 0px;
+	margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.carousel-indicators li {
+	background: #c0c0c0;
+}
+.carousel-indicators .active {
+background: #333333;
+}
+
+.carousel-next{
+    background-color: #ffffff;
+    border-radius: 100px;
+    box-shadow: 0 1px 5px 1px rgb(230, 230, 230);
+    padding: 5px;
+} 
+
+
+
+  .animated-info {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    min-width: 200px;
+    position: relative;
+  }
+  
+  .animated-item {
+    color: #1a73e8;
+  }
+  
+  .animated-item {
+    font-size: 38px;
+    line-height: inherit;
+    display: block;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    animation: BottomTotop 6s linear infinite 0s;
+  }
+  .animated-item:nth-child(2n+2) {
+    animation-delay: 2s;
+  }
+  .animated-item:nth-child(3n+3) {
+    animation-delay: 4s;
+  }
+
+.animated-item {
+    font-size: 36px;
+  }
+
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+
+
+@media (max-width: 580px) {
+	.animated-info {
+		min-width: 200px;
+	}
+    .animated-item {
+        font-size: 30px;
+    }
+    .messagepanel  {
+        width: 100%;
+    }
+    .message-body{
+        padding: 20px;
+    }
+    .message-fotter{
+        padding-right: 20px;
+        padding-bottom: 10px;
+    }
+    .message-bot-button{
+        padding: 11px 11px 11px 11px;
+    }
+    .sidesocialbutton
+    {
+        top:80px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: none;
+    }
+
+}
