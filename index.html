@@ -8,7 +8,7 @@
   <meta name="author" content="Pushpendra Kumar">
   <title>LocalGraphix</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  
+  <link rel="icon" href="images/logolg.png" style="border-radius: 50px;">
   <link rel="stylesheet" href="css/tooplate-style.css">
   <link rel="stylesheet" href="css/mainstyle.css">
 </head>
@@ -23,7 +23,7 @@
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light navigation">
       <div class="container-sm">
-      <a class="navbar-brand" href="index.html"><img src="images/logo.svg" height="38"/> Local<span style="color: #1a73e8;">Graphix</span></a>
+      <a class="navbar-brand" href="index.html"><img src="images/logolg.png" height="30"/> Local<span style="color: #1a73e8;">Graphix</span></a>
 
       <button id='nav-button' class="navbar-toggler" type="button" onclick="openNav()"  data-bs-target="#mySidepanel" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -34,22 +34,25 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mx-auto gap-4">
           <li class="nav-item ">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#service">Services</a>
+            <a class="nav-link" href="services.html">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#portfolio">Portfolio</a>
+            <a class="nav-link" href="/#portfolio">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact Us</a>
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#contact">Contact Us</a>
           </li>
         </ul>
 
         <ul class="navbar-nav ml-auto gap-2">
           <li class="nav-item">
-            <a class="nav-link" href="#">Subscribe Us</a>
+            <a class="nav-link" href="#messageUsModal" data-bs-toggle="modal" data-bs-target="#messageUsModal">Subscribe Us</a>
             <!-- <a class="nav-link" href="#messageUsModal" data-bs-toggle="modal" data-bs-target="#messageUsModal">
                <img src="images/message.svg" height="28"></a> -->
           </li>
@@ -62,13 +65,15 @@
 
 <!-- COLLAPSED MENU-->
   <div id="mySidepanel" class="sidepanel" style="top:60px !important">
-    <a class="nav-link nav-link-color" onclick="closeSideNav()" href="#">Home</a>
+    <a class="nav-link nav-link-color" style="padding: 0px;"  onclick="closeSideNav()" href="/">Home</a>
     <hr style="margin-left: 10px;margin-right: 10px;">
-    <a class="nav-link nav-link-color" onclick="closeSideNav()" href="#service">Services</a>
+    <a class="nav-link nav-link-color" style="padding: 0px;"  onclick="closeSideNav()" href="services.html">Services</a>
     <hr style="margin-left: 10px;margin-right: 10px;">
-    <a class="nav-link nav-link-color" onclick="closeSideNav()" href="#portfolio">Portfolio</a>
+    <a class="nav-link nav-link-color" style="padding: 0px;"  onclick="closeSideNav()" href="/#portfolio">Portfolio</a>
     <hr style="margin-left: 10px;margin-right: 10px;">
-    <a class="nav-link nav-link-color" onclick="closeSideNav()" href="#contact">Contact Us</a>
+    <a class="nav-link nav-link-color" style="padding: 0px;"  onclick="closeSideNav()" href="about.html">About</a>
+    <hr style="margin-left: 10px;margin-right: 10px;">
+    <a class="nav-link nav-link-color" style="padding: 0px;"  onclick="closeSideNav()" href="/#contact">Contact Us</a>
     <!-- <hr style="margin-left: 10px;margin-right: 10px;">
     <a class="nav-link nav-link-color" href="#messageUsModal" data-bs-toggle="modal" data-bs-target="#messageUsModal" onclick="closeSideNav()">
       <img src="images/message.svg" height="28"></a> -->
@@ -84,36 +89,41 @@
     <div class="message-body">
       <label for="email" class="small-text-2">Email or Phone <span style="color: red;font-size:20px">*</span></label>
       <br>
+      <small id='number_email_error' style="font-size: 10px;color:red"></small>
       <small style="font-size: 10px;">We will revert back to you at this email or WhatsApp number.</small>
-      <input id="email" class="form-control mb-2" type="text" placeholder="" required>
+      <input id="number_email" class="form-control mb-2" type="text" placeholder="" required>
+      
       <label for="email" class="small-text-2">Message <span style="color: red;font-size:20px">*</span></label>
-      <textarea class="form-control" style="height:90px; font-size:15px" required></textarea>
+      <textarea id='message_input' class="form-control" style="height:90px; font-size:15px"></textarea>
     </div>
     <div class="message-fotter d-flex justify-content-end gap-3">
       <a class="btn small-text-btn" onclick="closeMessagePanel()">Close</a>
-      <a href="#contact" class="btn small-text-color">Send</a>
+      <a onclick="validateAndMessage()" type="button" class="btn small-text-color">Send</a>
     </div>
   </div>
   <a id='message_button' class="message-bot-button" style="margin-top: 100px;" onclick="openMessagePanel()" type="button" 
   data-bs-target="#messageSidepanel"><img src="images/message.svg" height="24"></a>
   
 
-  <!-- MESSAGE MODEL -->
+  <!-- SUBSCRIBE MODEL -->
   <div class="container">
     <div class="row">
       <div id="messageUsModal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
-            <div class="modal-header modal-head-foot">
-              <h5 class="modal-title"><img src="https://img.icons8.com/external-kmg-design-flat-kmg-design/24/000000/external-graphic-design-design-thinking-kmg-design-flat-kmg-design.png"/>Message Us</h5>
+            <div class="modal-header modal-head-foot" style="background-color: white;">
+              <h5 class="modal-title"><img src="images/logolg.png" height="25"/> Subscribe</h5>
             </div>
-            <div class="modal-body m-2">
-              <textarea placeholder="Type your message here..." class="form-control textarea-height modal-background"></textarea>
+            <form name='contactus' id='contactform' action="#">
+            <div class="modal-body p-4" style="background-color: rgb(241, 241, 241);">
+              <input name="Email" id='subscribe_email' placeholder="Enter Valid Email" class="form-control">
+              <small id='emailError' style="font-size: 12px; color:red"></small>
             </div>
-            <div class="modal-footer modal-head-foot">
-              <button type="button" class="small-text-btn" data-bs-dismiss="modal">Cancel</button>
-              <button type="button" class="small-text-color" style="margin-right: 15px;">Send</button>
+            <div class="modal-footer">
+              <a id='cancel_subscription' type="button" class="btn small-text-btn" data-bs-dismiss="modal" onclick="closeSubsrcibeModel()">Cancel</a>
+              <a type="button" class="btn small-text-color" onclick="validateAndSubscribe()" style="margin-right: 15px;">Send</a>
             </div>
+          </form>
           </div>
         </div>
       </div>
@@ -125,40 +135,22 @@
     <div style="overflow: scroll; ">
     <button type="button" onclick="closeSocialPanel()" class="btn-close center" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" aria-label="Close"></button>
     <hr style="margin-left: 10px;margin-right: 10px;">
-    <a class="nav-link nav-link-color" onclick="closeSocialPanel()" href="https://www.instagram.com/localgraphix/" target="_blank"><img src="https://img.icons8.com/small/24/E1306C/instagram-new.png"/></a>
+    <a class="nav-link nav-link-color" style="padding: 0px;" data-toggle="tooltip" data-placement="right" title="Instagram"  onclick="closeSocialPanel()" href="https://www.instagram.com/localgraphix/" target="_blank"><img src="images/cinstagram.svg" height="20"/></a>
     <hr style="margin-left: 10px;margin-right: 10px;">
-    <a class="nav-link nav-link-color" onclick="closeSocialPanel()" href="#services" target="_blank"><img src="https://img.icons8.com/material/24/FF0000/youtube-play--v1.png"/></a>
+    <a class="nav-link nav-link-color" style="padding: 0px;" data-toggle="tooltip" data-placement="right" title="youtube" onclick="closeSocialPanel()" href="https://www.youtube.com/channel/UC8QHw8p1puQ6kYGVGj7pT4g" target="_blank"><img src="images/cyoutube.svg" height="20"/></a>
     <hr style="margin-left: 10px;margin-right: 10px;">
-    <a class="nav-link nav-link-color" onclick="closeSocialPanel()" href="#" target="_blank"><img src="https://img.icons8.com/small/24/1DA1F2/twitter.png"/></a>
+    <a class="nav-link nav-link-color" style="padding: 0px;" data-toggle="tooltip" data-placement="right" title="behance" onclick="closeSocialPanel()" href="https://www.behance.net/localgraphix" target="_blank"><img src="images/cbehance.svg" height="20"/></a>
     <hr style="margin-left: 10px;margin-right: 10px;">
-    <a class="nav-link nav-link-color" onclick="closeSocialPanel()" href="https://www.facebook.com/localgraphix1" target="_blank"><img src="https://img.icons8.com/material/24/4267B2/facebook--v1.png"/></a>
+    <a class="nav-link nav-link-color" style="padding: 0px;" data-toggle="tooltip" data-placement="right" title="dribbble" onclick="closeSocialPanel()" href="https://dribbble.com/localgraphix" target="_blank"><img src="images/cdribbble.svg" height="20"/></a>
+    <hr style="margin-left: 10px;margin-right: 10px;">
+    <a class="nav-link nav-link-color" style="padding: 0px;" data-toggle="tooltip" data-placement="right" title="facebook" onclick="closeSocialPanel()" href="https://www.facebook.com/localgraphix1" target="_blank"><img src="images/cfacebook.svg" height="20"/></a>
+    
   </div>
   </div>
   <a class="sidesocialbutton" onclick="openSocialPanel()"><img src="https://img.icons8.com/ios-filled/24/ffffff/forward--v1.png"/></a>
 
 
-  <!-- GET QOUTE MODEL -->
-  <div class="container">
-    <div class="row">
-      <div id="messageUsModal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title"><img src="https://img.icons8.com/external-kmg-design-flat-kmg-design/24/000000/external-graphic-design-design-thinking-kmg-design-flat-kmg-design.png"/>Message Us</h5>
-            </div>
-            <div class="modal-body">
-              <textarea class="form-control"></textarea>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-primary">Send</button>
 
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
   <!-- ABOUT -->
@@ -182,7 +174,7 @@
               and UI/UX designing</p>
 
             <div class="custom-btn-group mt-4">
-              <a href="#" class="btn mr-lg-2 custom-btn"><img src="https://img.icons8.com/color/18/000000/bell.png"/> Subscribe Us</a>
+              <a href="#messageUsModal" data-bs-toggle="modal" data-bs-target="#messageUsModal" class="btn mr-lg-2 custom-btn"><img src="https://img.icons8.com/color/18/000000/bell.png"/> Subscribe Us</a>
               <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Get a free quote</a>
             </div>
           </div>
@@ -214,15 +206,15 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-4 py-3 py-sm-0">
-              <div class="card">
-                <img class="card-img-top service-images" src="images/logo1.svg" height="200" style="padding:20px;" alt="Card image cap">
+              <div class="card" style="border-radius: 10px;">
+                <img class="card-img-top service-images" src="images/logosvg.svg" height="200" style="padding:20px;" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Logo Design</h5>
                 </div>
               </div>
             </div>
             <div class="col-sm-4 py-3 py-sm-0">
-              <div class="card">
+              <div class="card" style="border-radius: 10px;">
                 <img class="card-img-top service-images" src="images/prod1.svg" height="200" style="padding:20px;" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Product Design</h5>
@@ -230,7 +222,7 @@
               </div>
             </div>
             <div class="col-sm-4 py-3 py-sm-0">
-              <div class="card">
+              <div class="card" style="border-radius: 10px;">
                 <img class="card-img-top service-images" src="images/web1.svg" height="200" style="padding:20px;" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Web Design</h5>
@@ -258,7 +250,7 @@
           <div class="col-lg-8 mx-auto pb-3">
             <p id='portfolio' class="gray-color">OUR PORTFOLIO</p>
             <h2>Check our portfolio</h2>
-            <p>Check before work</p>
+            <p>If you want to see some demo please visit.</p>
           </div>
 
         <div class="container">
@@ -266,25 +258,25 @@
             <div class="col-sm-4 py-3 py-sm-0">
               <div class="card" style="border-radius: 10px;" href="https://www.behance.net/localgraphix">
                 
-                <div class="card-body" style="border-radius: 10px; background-color:#0057ff;color:white">
-                  <h5 class="card-title" ><a style="color:white;text-weight:bold" href="https://www.behance.net/localgraphix" target="_blank"><h5>Behance</h5></a></h5>
+                <div class="card-body" style="border-radius: 10px; background-color:#0057ff;color:white;box-shadow: 0 2px 10px 2px #7aa5fc; ">
+                  <h5 class="card-title" ><a class="stretched-link" style="color:white;text-weight:bold" href="https://www.behance.net/localgraphix" target="_blank"><h5>Behance</h5></a></h5>
                 </div>
               </div>
             </div>
             <div class="col-sm-4 py-3 py-sm-0">
               <div class="card card-round-portfolio">
                 
-                <div class="card-body" style="border-radius: 10px;background-color:#ea4c89;color:white">
+                <div class="card-body" style="border-radius: 10px;background-color:#ea4c89;color:white;box-shadow: 0 2px 10px 2px #ffb0cf; ">
 
-                  <h5 class="card-title" ><a style="color:white;text-weight:bold" href="https://dribbble.com/localgraphix" target="_blank"><h5>Dribbble</h5></a></h5>
+                  <h5 class="card-title" ><a class="stretched-link" style="color:white;text-weight:bold" href="https://dribbble.com/localgraphix" target="_blank"><h5>Dribbble</h5></a></h5>
                 </div>
               </div>
             </div>
             <div class="col-sm-4 py-3 py-sm-0">
               <div class="card card-round-portfolio">
                 
-                <div class="card-body portfolio-design" style="border-radius: 10px;background-color:#ffae00;color:white">
-                  <h5 class="card-title" ><a style="color:white;text-weight:bold" href="https://www.instagram.com/localgraphix/" target="_blank"><h5>Instagram</h5></a></h5>
+                <div class="card-body portfolio-design" style="border-radius: 10px;background-color:#ffae00;color:white;box-shadow: 0 2px 10px 2px #ffe1a0; ">
+                  <h5 class="card-title" ><a class="stretched-link" style="color:white;text-weight:bold" href="https://www.instagram.com/localgraphix/" target="_blank"><h5>Instagram</h5></a></h5>
                   
                 </div>
               </div>
@@ -306,30 +298,30 @@
       
       <div class="row center">
         
-            <p id='portfolio' class="gray-color text-center">CONTACT US</p>
+            <p class="gray-color text-center">CONTACT US</p>
             <h2 class="mb-4 text-center">Interested to work together? Let's talk</h2>
             <div class="d-flex justify-content-center">
-            <form action="" method="get">
-              <div class="card " style="border-radius: 15px;background-color: rgb(245, 245, 245);">
+            <form method="get">
+              <div class="card" style="border-radius: 10px;background-color: rgb(247, 247, 247);box-shadow: 0 5px 10px 0px rgb(192, 192, 192);">
                 <div class="card-body contact-forms">
               <div class="row">
                 <div class="col-lg-6 col-12">
                   <label for="email" class="small-text-2">Name</label>
-                 <input style="background-color: white;" id="email" class="form-control mb-2" type="text" placeholder="Name Here...">
+                 <input style="background-color: white;" id="name" class="form-control mb-2" type="text" placeholder="Name Here...">
                 </div>
 
                 <div class="col-lg-6 col-12">
-                  <label for="email" class="small-text-2">Email or Phone <span style="color:red">*</span></label>
+                  <label for="email" class="small-text-2">Email <span style="color:red">*</span></label>
                  <input id="email" class="form-control mb-2" type="text" placeholder="Email Here..." required>
                 </div>
-
+                <small id='email2_error' style="font-size: 10px;color:red"></small>
                 <div class="col-12">
                   <label for="email" class="small-text-2">Message <span style="color: red;">*</span></label>
-                  <textarea placeholder="Message Here..." class="form-control" style="height:120px; font-size:15px" required></textarea>
+                  <textarea id='message' placeholder="Message Here..." class="form-control" style="height:120px; font-size:15px" required></textarea>
                 </div>
 
                 <div>
-                  <input type="submit" class="form-control submit-btn" value="Send">
+                  <input type="button" class="form-control submit-btn" onclick="validateAndContact()" value="Submit">
                 </div>
               </div>
               </div>
@@ -343,59 +335,81 @@
   </div>
   </section>
 
-  <!-- FOOTER -->
-  <!-- Footer -->
 <footer class="page-footer font-small unique-color-dark" style="padding-top: 20px;background-color: #1a73e8;background-image: linear-gradient(120deg, #1a73e8 , #185abc); border-radius: 70px 0px 0px 0px;">
-  <!-- Footer Links -->
-  <div class="container text-center text-md-left mt-5">
-
-    <!-- Grid row -->
+  <div class="container text-md-left mt-5">
     <div class="row mt-3">
-
-      <!-- Grid column -->
-      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-
-        <!-- Content -->
-        <h6 style="color: white;">About Us</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;color:white">
-        
-        <p class="small-text-fotter">Here at LocalGraphix, we can design everything you want. Whether you're looking for a new logo or some stunning flyers, Branding, or posts. Find the right design service for you and get the design you'll love today!</p>
-
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-        <!-- Links -->
         <h6 style="color: white;">Links</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 30px; color:white">
-        <p>
-          <a class="small-text-fotter" href="#">Home</a>
-        </p>
-        <p>
-          <a class="small-text-fotter" href="#service">Services</a>
-        </p>
-        <p>
-          <a class="small-text-fotter" href="#portfolio">Portfolio</a>
-        </p>
-        <p>
-          <a class="small-text-fotter" href="#contact">Contact Us</a>
-        </p>
+        <ul>
+        <li class="bottom-margin">
+          <a class="small-text-fotter" href="/">Home</a>
+        </li>
+        <li class="bottom-margin">
+          <a class="small-text-fotter" href="services.html">Services</a>
+        </li>
+        <li class="bottom-margin">
+          <a class="small-text-fotter" href="/#portfolio">Portfolio</a>
+        </li>
+        <li>
+          <a class="small-text-fotter" href="about.html">About Us</a>
+        </li>
+        <li>
+          <a class="small-text-fotter" href="/#contact">Contact Us</a>
+        </li>
+        <li>
+          <a class="small-text-fotter" href="privacypolicy.html">Privacy Policy</a>
+        </li>
+      </ul>
 
       </div>
-    
-
-      <!-- Grid column -->
       <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-        <!-- Links -->
         <h6 style="color: white;">Contact Info</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;color:white">
-        <p style="margin-bottom: 0px;" class="small-text-fotter">Noida, INDIA</p>
-        <p style="margin-bottom: 0px;" class="small-text-fotter">localgraphix.com@gmail.com</p>
-        <p style="margin-bottom: 0px;" class="small-text-fotter">08888888888</p>
-
+        <ul>
+          <li class="bottom-margin-2">
+            <p style="margin-bottom: 0px;" class="small-text-fotter"><img src="https://img.icons8.com/ios-filled/18/ffffff/place-marker--v1.png"/> Noida, INDIA</p>
+          </li>
+        <li class="bottom-margin-2">
+          <p style="margin-bottom: 0px;" class="small-text-fotter"><img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/18/ffffff/external-email-advertising-kiranshastry-solid-kiranshastry-1.png"/> localgraphix.com@gmail.com</p>
+        </li>
+        <li class="bottom-margin-2">
+          <p style="margin-bottom: 0px;" class="small-text-fotter"><img src="https://img.icons8.com/ios-glyphs/18/ffffff/phone--v1.png"/> 08888888888</p>
+        </li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        <h6 style="color: white;">Follow Us</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; color:white">
+        <ul class="list-group list-group-horizontal">
+        
+        <li class="right-margin">
+          <a class="small-text-fotter" data-toggle="tooltip" data-placement="top" title="Instagram" href="https://www.instagram.com/localgraphix/" target="_blank"><img src="images/instagram.svg" height="25"/></a>
+        </li>
+        <li class="right-margin">
+          <a class="small-text-fotter" data-toggle="tooltip" data-placement="top" title="dribbble" href="https://dribbble.com/localgraphix" target="_blank"><img src="images/dribbble.svg" height="25"/></a>
+        </li>
+        <li class="right-margin">
+          <a class="small-text-fotter" data-toggle="tooltip" data-placement="top" title="Behance" href="https://www.behance.net/localgraphix" target="_blank"><img src="images/behance.svg" height="25"/></a>
+        </li>
+        <li class="right-margin">
+          <a class="small-text-fotter" data-toggle="tooltip" data-placement="top" title="Youtube" href="https://www.youtube.com/channel/UC8QHw8p1puQ6kYGVGj7pT4g" target="_blank"><img src="images/youtube.svg" height="25"/></a>
+        </li>
+        <li class="right-margin">
+          <a class="small-text-fotter" data-toggle="tooltip" data-placement="top" title="FaceBook" href="https://www.facebook.com/localgraphix1" target="_blank"><img src="images/facebook.svg" height="25"/></a>
+        </li>
+        <li>
+          <a class="small-text-fotter" data-toggle="tooltip" data-placement="top" title="Twitter" href="#"><img src="images/twitter.svg" height="25"/></a>
+        </li>
+      </ul>
+      <br>
+      <br>
+      <a style="background-color:rgb(255, 255, 255);
+                padding: 10px 20px 10px 20px;
+                border-radius: 5px;
+                color: #1a73e8;
+                font-weight: bold;
+                cursor: pointer;" href="#messageUsModal" data-bs-toggle="modal" data-bs-target="#messageUsModal">Subscribe</a>
       </div>
     </div>
   </div>
@@ -403,15 +417,7 @@
     <a style="color:white" href="https://localgraphix.com/"> LocalGraphix</a> | All rights reserved
   </div>
 </footer>
-
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jQuery.headroom.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
   <script src="js/smoothscroll.js"></script>
   <script src="js/custom.js"></script>
-
 </body>
-
 </html>
