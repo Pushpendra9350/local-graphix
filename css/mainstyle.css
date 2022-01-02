@@ -126,7 +126,7 @@ a .brand-logo {
     z-index: 1;
     height: 300px;
     top: 10 !important;
-    right: 0;
+    right: -20px;
     background-color: rgb(255, 255, 255);
     overflow-y: hidden;
     transition: 0.5s;
