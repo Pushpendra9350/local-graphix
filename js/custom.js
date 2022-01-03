@@ -1,4 +1,4 @@
-var url = "https://script.google.com/macros/s/AKfycbzGkvS9JFdi5G_z_8DwZ7o66jpPuhbLSuYn3hHy5lRCaIUb_lPsTttuZWrXnxcH2bDvuQ/exec"
+var url = "https://script.google.com/macros/s/AKfycbwud9sHEnHHeGORfhDrJMsr5ShtjsBwh9i1XaZ1LjA12PmSxLGuAfZYiyMGkiFtp-xWYA/exec"
 function openNav() {
   if (document.getElementById("mySidepanel").style.width=='250px'){
     document.getElementById("mySidepanel").style.width = "0px";
@@ -107,7 +107,7 @@ function sendsubscribeMessage(final_message){
 }
 function validateAndSubscribe(){
   var email = document.getElementById("subscribe_email").value
-  var final_message = "New Subscriber\n\nEmail\n"+String(email);
+  var final_message = "<b>New Subscriber</b>\n\nEmail: "+String(email);
   var email = document.getElementById("subscribe_email").value
   if (validateEmail(email) == 'null' || validateEmail(email) == null || email== '') {
     document.getElementById("emailError").innerHTML = "Please enter a valid email address";
@@ -119,7 +119,7 @@ function validateAndSubscribe(){
 function validateAndMessage(){
   var number_email = document.getElementById("number_email").value
   var message = document.getElementById("message_input").value
-  var final_message = "New Message\n\nNumber or Email\n"+String(number_email)+"\n\nMessage\n"+String(message);
+  var final_message = "<b>New Message</b>\n\nNumber or Email: "+String(number_email)+"\n\nMessage: "+String(message);
   if (validateEmail(number_email) == 'null' || validateEmail(number_email) == null || number_email== '') {
     if (validatePhone(number_email) == null || number_email== '')
     {
@@ -144,7 +144,7 @@ function validateAndContact(){
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var message = document.getElementById("message").value;
-    var contact_message = "Contact Message\n\nName: " + name + "\n\nEmail: " + email + "\n\nMessage: " + message;
+    var contact_message = "<b>Contact Message</b>\n\nName: " + name + "\n\nEmail: " + email + "\n\nMessage: " + message;
     if (validateEmail(email) == 'null' || validateEmail(email) == null || email== '') {
       document.getElementById("email2_error").innerHTML = "Please enter a valid email address";
     }
